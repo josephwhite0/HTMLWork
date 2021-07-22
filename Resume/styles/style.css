@@ -1,0 +1,21 @@
+body{
+    text-align: left;
+    font-family:'Franklin Gothic Medium';
+    font-size: 23px;
+    background-color: #a2bccf;
+    padding-left: 25px;
+}
+h1{
+    font-family:'Lucida Sans';
+    color: #763626;
+}
+div.line1{
+    width:600px;
+    height:10px;
+    background-color: black;
+}
+div.line2{
+    width:600px;
+    height:3px;
+    background-color: black;
+}

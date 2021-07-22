@@ -1,0 +1,112 @@
+<html>
+    <script language="JavaScript">
+        var memberNames = new Array(100);
+        var birthDays   = new Array(100);
+        var genders     = new Array(100);
+        var numOfMembers= 0;
+
+        function storeMembers()
+        {
+            var memberNameStr = document.memberForm.memberNames.value;
+            var dobStr        = document.memberForm.dateOfBirth.value;
+            var genderStr     = document.memberForm.genders.value;
+            
+            if (memberNameStr == "" ||
+                dobStr        == "" ||
+                genderStr     == "")
+            {
+                alert("All fields should not be blank");
+            }
+                else
+                {
+
+                    var dateStr = dobStr;
+                    var dateParts = dateStr.split("/");
+                    if (parseInt(dateParts[2]) > 1998)
+                        alert("Too young to be a member");
+                    else
+                    {
+                        memberNames[numOfMembers] = memberNameStr;
+                        birthDays [numOfMembers] = dobStr;
+                        genders [numOfMembers] = genderStr;
+                        numOfMembers++;
+                        document.memberForm.memberNames.value = "";
+                        document.memberForm.dateOfBirth.value = "";
+                        document.memberForm.genders.value = "";
+                    } 
+                }
+        }
+        
+        function displayMembers()
+        {
+            var col;
+            var pos;
+
+            document.memberForm.list.value = "Member Name      Date of Birth     Gender\n";
+            document.memberForm.list.value += "------------      -------------     ------\n";
+
+            for (pos = 0; pos < numOfMembers; pos++)
+            {
+                document.memberForm.list.value += memberNames[pos];
+                for (col = memberNames[pos].length; col <= 25; col++)
+                    document.memberForm.list.value += " ";
+                document.memberForm.list.value += birthDays[pos];
+                for (col = birthDays[pos].length; col <= 15; col++)
+                    document.memberForm.list.value += " ";
+                document.memberForm.list.value += genders[pos] + "\n";
+            }
+        }
+
+        function clearForm()
+        {
+            var pos;
+
+            for(pos = 0; pos < numOfMembers; pos++)
+            {
+                memberNames[pos]="";
+                birthDays[pos]="";
+                genders[pos]="";
+            }
+            
+            displayMembers();
+            numOfMembers = 0;
+            pos = 0;
+             
+        }
+    </script>
+    
+    <body>
+    
+        <h2>INTERNET TECHNOLOGIES CLUB MEMBER LIST</h2>
+        <hr>
+        <br>
+        <form name="memberForm">
+            <table>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="memberNames"></td>
+                <td>Date of Birth:</td>
+                <td><input type="text" name="dateOfBirth"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td><input type="text" name="genders"></td>
+                <tb>&nbsp;</tb>
+                <tb>&nbsp;</tb>
+            </tr>
+            </table>
+            <br>
+                <textarea name = "list" rows="10" cols="55" maxlength="100"></textarea>
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <input type="button" value="NEXT" onclick="storeMembers();">
+            <input type="button" value="DISPLAY" onclick="displayMembers();">
+            <input type="button" value="RESET" onclick="clearForm();">
+            <br><br>
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+/*
+Student Names: AJ Dowell and Robert Duvall
+File Name: styles.css
+Last Modified: 03/24/2021
+*/
+
+/*
+CSS Reset
+*/
+header, body, main, nav, footer, h1, h2, h3, h4, ul, nav, li, ol, p, img{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*Header style rules*/
+header{
+  text-align: center;
+  font-size: 2em;
+  color: #0b0c12;
+  background-color: #3d426b;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/*Nav style rules*/
+
+nav {
+	padding: 1%;
+    margin-bottom: 1%;
+    background-color: #61668c;
+    position: -webkit-sticky;
+    position: relative;
+    top: 0px;
+    text-align: center;
+}
+
+nav li {
+    padding: 2%;
+    display: inline-block;
+    font-family: 'B612', sans-serif;
+    text-align: -webkit-match-parent;
+    background-color: #61668c fixed;
+}
+nav li a {
+    display: inline-block;
+    color: #092834;
+    text-decoration: none;
+    text-align: -webkit-match-parent;
+    margin:inherit;
+    padding: 3%;
+    font-size: 1.5em;
+}
+/*Link rules*/
+a:hover {
+  background-color: #3d426b;
+  color: azure;
+}
+
+/*Img style rules*/
+img {
+    max-width: 100%;
+    display: block;
+	
+}
+
+/*Body style rules*/
+body{
+	background: linear-gradient(to bottom right, #3d426b,#91addb) fixed;
+	font-family: 'B612', sans-serif;
+	font-size: 1em;
+	text-align: center;
+}
+
+/*Footer style rules*/
+
+#contact-link{
+	font-size: 20px;
+	text-decoration: dotted overline;
+	color:#8f6400
+
+}
+
+p#copyright{
+	font-size: 15px;
+	text-decoration: dotted overline;
+}
